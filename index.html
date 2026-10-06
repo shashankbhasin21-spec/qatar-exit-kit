@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Qatar Exit Kit: leaving Qatar permanently checklist + grace-period helper</title>
+<meta name="description" content="Free checklist for expats leaving Qatar permanently: RP cancel order, Kahramaa, banks, vehicle transfer, telecom, and a grace-period leave-by date. Informational only, not immigration advice.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="brand" href="./">Qatar Exit Kit</a>
+<nav class="top" aria-label="Main">
+<a href="#checklist">Checklist</a>
+<a href="#grace">Grace period</a>
+<a href="#pricing">Pricing</a>
+</nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero">
+<h1>Leave Qatar clean &#8212; RP, Kahramaa, banks, car and papers in the right order.</h1>
+<p class="tagline-hi" lang="hi">Qatar &#2331;&#2379;&#2337;&#2364;&#2344;&#2375; &#2360;&#2375; &#2346;&#2361;&#2354;&#2375;: RP cancel, Kahramaa, &#2348;&#2376;&#2306;&#2325;, &#2327;&#2366;&#2337;&#2364;&#2368; &#2324;&#2352; grace period &#8212; &#2360;&#2361;&#2368; &#2325;&#2381;&#2352;&#2350; &#2350;&#2375;&#2306;&#2404;</p>
+<p class="lead">For expats leaving Qatar <strong>permanently</strong> (especially Indians returning home). The order matters: settle bank debts early, transfer your car before your residence permit (RP) is cancelled, cancel dependents&#8217; RPs before the sponsor&#8217;s, keep one bank account open for refunds, and leave within the grace period. This kit is a plain checklist and date helper &#8212; not a filing service and not legal or immigration advice.</p>
+<p class="note"><strong>Privacy:</strong> nothing you type leaves this device. No accounts, analytics or cookies.</p>
+<p class="note warn"><strong>Not legal, immigration, labour or tax advice.</strong> Qatar rules change. Always confirm on your RP cancellation document and on official channels (MOI portal / Metrash, Kahramaa, your bank, your employer&#8217;s PRO). Exit-permit rules depend on your category &#8212; check yours.</p>
+</section>
+<section id="why" aria-labelledby="why-h">
+<h2 id="why-h">Why this exists</h2>
+<div class="card">
+<ul class="plain">
+<li>Independent guides report a <strong>grace period of 30 days</strong> after RP cancellation for residents (7 days for visit visas) before fines apply &#8212; your cancellation paper is the final word.</li>
+<li>Since Qatar&#8217;s 2019&#8211;2020 reforms, <strong>most expatriate employees no longer need an exit permit</strong>, but some categories still do &#8212; check MOI / Metrash for yours.</li>
+<li>Common traps: selling the car <em>after</em> the RP is cancelled, closing the last bank account before the gratuity or Kahramaa refund arrives, leaving postpaid telecom open, and unpaid loans or cards that can block travel.</li>
+<li>Indian returnees also need India-side paperwork. For passport / OCI / PCC deadlines, see our sister kit <a href="https://shashankbhasin21-spec.github.io/mohlat/" rel="noopener noreferrer" target="_blank">Mohlat</a>.</li>
+</ul>
+<p class="small">Background reading: <a href="https://www.propertyfinder.qa/blog/visa-cancellation-qatar/" rel="noopener noreferrer" target="_blank">Property Finder &#8212; visa cancellation in Qatar</a> &#183; <a href="https://www.dohaguides.com/leaving-qatar-checklist/" rel="noopener noreferrer" target="_blank">Doha Guides &#8212; leaving Qatar checklist</a> &#183; <a href="https://qna.org.qa/en/news/news-details?date=16%2F01%2F2020&amp;id=exit-permits-abolished-for-expatriates-not-subject-to-the-labor-law" rel="noopener noreferrer" target="_blank">QNA &#8212; exit permits abolished (2020)</a>.</p>
+</div>
+</section>
+<section id="checklist" aria-labelledby="check-h">
+<h2 id="check-h">1. Master exit checklist</h2>
+<p class="lead-sm">Ordered to match a typical permanent-exit sequence. Tick what you have finished. Progress saves only on this device.</p>
+<div class="card" id="check-list"></div>
+<p class="small" id="check-status" aria-live="polite"></p>
+<div class="actions">
+<button type="button" id="btn-export" class="btn primary">Copy summary</button>
+<button type="button" id="btn-print" class="btn">Print / save PDF</button>
+<button type="button" id="btn-reset-check" class="btn ghost">Reset checklist</button>
+</div>
+</section>
+<section id="grace" aria-labelledby="grace-h">
+<h2 id="grace-h">2. Grace-period helper</h2>
+<p class="lead-sm">Enter the RP cancellation date and the grace days on your document (default 30, as commonly reported for residents &#8212; <strong>your paper wins</strong>). Simple date arithmetic only.</p>
+<div class="card form-grid">
+<label>RP cancellation date <input id="cancel-date" type="date" autocomplete="off"></label>
+<label>Grace days on your document <input id="grace-days" type="number" min="0" max="365" step="1" value="30" autocomplete="off"></label>
+<label>Notes (optional) <input id="grace-notes" type="text" maxlength="120" placeholder="e.g. flight booked, PRO contact" autocomplete="off"></label>
+</div>
+<p class="small"><strong>Leave-by date reminder:</strong> <span id="grace-result">&#8212;</span></p>
+<p class="small" id="fine-result" aria-live="polite"></p>
+<div class="actions">
+<button type="button" id="btn-calc-grace" class="btn primary">Calculate</button>
+<button type="button" id="btn-clear-grace" class="btn ghost">Clear</button>
+</div>
+</section>
+<section id="pricing" aria-labelledby="price-h">
+<h2 id="price-h">Pricing</h2>
+<div class="price-grid">
+<div class="card price">
+<h3>Free checklist</h3>
+<p class="amount">&#8377;0</p>
+<ul class="plain"><li>Ordered Qatar permanent-exit checklist</li><li>Grace-period leave-by helper</li><li>Copy or print summary</li></ul>
+<a class="btn" href="#checklist">Use free tool</a>
+</div>
+<div class="card price featured">
+<h3>Pro pack</h3>
+<p class="amount">&#8377;299 <span class="or">/ $9.99</span></p>
+<p class="small">One-time &#183; waitlist only for now</p>
+<ul class="plain"><li>Printable PDF checklist pack</li><li>HR / gratuity settlement email templates</li><li>RP-cancel sequence one-pager</li><li>Bank / Kahramaa / telecom close reminders</li></ul>
+<a class="btn primary" id="btn-waitlist" href="mailto:shashankbhasin21@gmail.com?subject=Qatar%20Exit%20Kit%20Pro%20waitlist&amp;body=I%20want%20the%20Qatar%20Exit%20Kit%20Pro%20pack%20(%E2%82%B9299%20%2F%20%249.99).%0A%0AName%3A%0AExpected%20leaving%20month%3A%0A">Email to join waitlist</a>
+<p class="small">Pay link coming when the payment listing is ready. No fake reviews; no invented traction.</p>
+</div>
+</div>
+</section>
+<section id="sources" aria-labelledby="src-h">
+<h2 id="src-h">Official &amp; reference links</h2>
+<div class="card">
+<ul class="plain">
+<li><a href="https://portal.moi.gov.qa/" rel="noopener noreferrer" target="_blank">MOI Qatar portal (RP, exit permit, fines)</a></li>
+<li><a href="https://hukoomi.gov.qa/en/" rel="noopener noreferrer" target="_blank">Hukoomi &#8212; Qatar government services</a></li>
+<li><a href="https://www.km.qa/" rel="noopener noreferrer" target="_blank">Kahramaa &#8212; electricity &amp; water</a></li>
+<li><a href="https://www.mea.gov.in/images/pdf/pr-dep-qatar.pdf" rel="noopener noreferrer" target="_blank">MEA India &#8212; Qatar pre-departure manual (PDF)</a></li>
+<li><a href="https://www.propertyfinder.qa/blog/visa-cancellation-qatar/" rel="noopener noreferrer" target="_blank">Property Finder &#8212; visa cancellation in Qatar</a></li>
+<li><a href="https://www.dohaguides.com/leaving-qatar-checklist/" rel="noopener noreferrer" target="_blank">Doha Guides &#8212; leaving Qatar checklist</a></li>
+</ul>
+<p class="small">Sister kits: <a href="https://shashankbhasin21-spec.github.io/uae-exit-kit/" rel="noopener noreferrer" target="_blank">UAE Exit Kit</a> &#183; <a href="https://shashankbhasin21-spec.github.io/mohlat/" rel="noopener noreferrer" target="_blank">Mohlat (India NRI docs)</a> &#183; <a href="https://shashankbhasin21-spec.github.io/pf-claim-kit/" rel="noopener noreferrer" target="_blank">PF Claim Kit</a>.</p>
+</div>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p class="small">&#169; 2026 APEX HOLDING &#183; sold by Shashank Bhasin &#183; D-168 Greater Kailash, Delhi &#183; GSTIN unregistered &#183; <a href="mailto:shashankbhasin21@gmail.com">shashankbhasin21@gmail.com</a>
+</p>
+<nav class="top" aria-label="Legal">
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+<a href="refund.html">Refunds</a>
+</nav>
+</div>
+</footer>
+<script src="app.js">
+</script>
+</body>
+</html>
